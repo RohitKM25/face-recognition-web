@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="flex items-center">
+     <div class="flex-grow">
+          {% for person in detected_faces %}
+          <p>{{ person[0] }}</p>
+          {% endfor %}
+     </div>
+     <div class="p-2">
+          <image class="rounded-xl" src="{{ url_for('video_feed') }}"></image>
+     </div>
+</div>
+{% endblock %}
